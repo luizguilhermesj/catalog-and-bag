@@ -1,0 +1,12 @@
+body {
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+nav {
+    background-color: #202025;
+    margin-bottom: 40px;
+}

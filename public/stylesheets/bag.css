@@ -1,0 +1,140 @@
+.bag-list {
+    background-color: #202025;
+    padding: 20px;
+}
+
+.bag-item, .bag-finish {
+    padding: 20px 0;
+    border-top: 1px solid black;
+    line-height: initial !important;
+    position: relative;
+}
+
+.bag-item-image-container {
+    height: 60px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.bag-title {
+    padding-bottom: 30px;
+}
+
+.bag-title-text {
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.bag-title-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.bag-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    line-height: 20px;
+    background-color: #dfbd00;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bag-item-title {
+    font-weight: bold;
+    display: block;
+}
+
+.bag-item-size {
+}
+
+.bag-item-quantity {
+    display: block;
+}
+
+.bag-item-price-container {
+    display: table;
+}
+
+.bag-item-icon,
+.bag-item-price {
+    position: absolute;
+    right: 0;
+}
+
+.bag-item-icon {
+    top: 23%;
+    color: black;
+    z-index: 3;
+}
+
+.bag-item-icon:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.bag-item-icon-overlay {
+    z-index: 2;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    right: -20px;
+    left: -20px;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+}
+
+.bag-item-icon:hover ~ .bag-item-icon-overlay {
+    display: block;
+}
+
+.bag-item-icon:hover ~ * {
+    text-decoration: line-through;
+}
+
+.bag-item-price {
+    top: 55%;
+    font-weight: bold;
+    color: #dfbd00;
+}
+
+.bag-finish>div {
+    padding: 0;
+}
+
+.bag-finish-text {
+    line-height: 50px
+}
+
+.bag-finish-price-full {
+    font-size: 25px;
+    font-weight: bold;
+    color: #dfbd00;
+}
+
+.bag-finish-price-installments {
+    font-size: 12px;
+}
+
+.bag-finish-buy {
+    margin: 15px 0 !important;
+}
+
+.bag-is-empty .bag-finish,
+.bag-is-empty .bag-badge  {
+    display: none;
+}
+
+.bag-is-empty .bag-empty-message {
+    display: block;
+}
+
+.bag-empty-message {
+    display: none;
+}

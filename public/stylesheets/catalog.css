@@ -1,0 +1,52 @@
+.catalog-item {
+    margin-bottom: 40px;
+}
+
+.catalog-item-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.catalog-item-image {
+    display: inline-block;
+}
+
+.catalog-add-to-bag {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.catalog-item-image-container:hover .catalog-add-to-bag {
+    display: block;
+}
+
+.catalog-item-title {
+    color: #313135;
+    margin: 0;
+    margin-top: 20px;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    height: 40px;
+}
+
+.catalog-item-divider {
+    display: inline-block;
+    border-top: 2px solid #dfbd00;
+    width: 15px;
+    margin: 0;
+}
+
+.catalog-item-price-integer {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.catalog-item-price-installments {
+    color: #999999;
+}

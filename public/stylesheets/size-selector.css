@@ -1,0 +1,27 @@
+
+
+
+.size-selector-options {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 36px;
+    margin-bottom: 0;
+}
+
+.is-active.size-selector:hover .size-selector-options {
+    display: block;
+}
+
+.size-selector-item {
+    background: rgba(255,255,255,0.8);
+    padding: 3px;
+    color: black !important;
+    text-decoration: none !important;
+    display: block;
+}
+
+.size-selector-item:hover {
+    background: rgb(255,255,255);
+}
