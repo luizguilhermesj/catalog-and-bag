@@ -89,6 +89,16 @@
         this.$element.trigger('bag.updated');
     };
 
+    Bag.prototype.getInstallments = function(value) {
+        var minInstallment = value/25;
+        if (minInstallment < 2) return null;
+
+        var installment = Math.floor(minInstallment);
+        installment = (installment > 12) ? 12 : installment;
+        return 'OU EM ATÉ '+installment+' X de '+this.options.currencyFormat+' '+$.formatPrice(value/installment);
+        
+    };
+
     Bag.prototype.render = function() {
         var rendered ="";
         var subtotal = 0;
@@ -106,7 +116,8 @@
 
         this.$badges.text(quantity);
         this.$priceFull.html(this.options.currencyFormat+' '+$.formatPrice(subtotal));
-        this.$priceInstallments.html('OU EM ATÉ 10 X de '+this.options.currencyFormat+' '+$.formatPrice(subtotal/10));
+
+        this.$priceInstallments.html(this.getInstallments(subtotal));
 
         this.$itens.html(rendered);
     };

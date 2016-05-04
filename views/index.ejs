@@ -19,54 +19,54 @@
         <link rel="stylesheet" href="/stylesheets/size-selector.css">
     </head>
     <body class="bag-is-empty">
-            <nav class="">
-              <div class="nav-wrapper">
-                <a href="#!" class="brand-logo center">NetShoes Bag Test</a>
-                <ul class="right">
-                  <li class="">
-                    <a href="#" data-activates="slide-out" class="bag-collapse">
-                        <div class="bag-title-icon-container">
-                            <img src="/images/bag-icon.png"/>
-                            <span class="bag-badge" data-bag-badge>0</span>
-                        </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <ul
-              id="slide-out"
-              class="side-nav bag-list"
-              data-bag
-              data-template="#bag-item-template"
-              data-currency-format="R$">
-                <li class="text-center bag-title">
+        <nav class="">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">NetShoes Bag Test</a>
+            <ul class="right">
+              <li class="">
+                <a href="#" data-activates="slide-out" class="bag-collapse">
                     <div class="bag-title-icon-container">
-                        <img src="/images/bag-icon.png" class=/>
+                        <img src="/images/bag-icon.png"/>
                         <span class="bag-badge" data-bag-badge>0</span>
                     </div>
-                    <span class="bag-title-text">SACOLA</span>
-                </li>
-                <li>
-                    <ul class="bag-itens" data-itens>
-                    </ul>
-                </li>
-                <li class="bag-empty-message text-center">
-                    Sua sacola ainda está vazia.
-                </li>
-                <li class="bag-finish clearfix">
-                    <div class="col-xs-3 bag-finish-text">
-                        SUBTOTAL
-                    </div>
-                    <div class="col-xs-9 bag-finish-price text-right">
-                        <div class="bag-finish-price-full" data-price-full></div>
-                        <div class="bag-finish-price-installments" data-price-installments></div>
-                    </div>
-                    <div class="col-xs-12">
-                        <a href="#" class="btn waves-effect waves-light  btn-large black bag-finish-buy">COMPRAR</a>
-                    </div>
-                </li>
-              </ul>
-            </nav>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul
+          id="slide-out"
+          class="side-nav bag-list"
+          data-bag
+          data-template="#bag-item-template"
+          data-currency-format="R$">
+            <li class="text-center bag-title">
+                <div class="bag-title-icon-container">
+                    <img src="/images/bag-icon.png" class=/>
+                    <span class="bag-badge" data-bag-badge>0</span>
+                </div>
+                <span class="bag-title-text">SACOLA</span>
+            </li>
+            <li>
+                <ul class="bag-itens" data-itens>
+                </ul>
+            </li>
+            <li class="bag-empty-message text-center">
+                Sua sacola ainda está vazia.
+            </li>
+            <li class="bag-finish clearfix">
+                <div class="col-xs-3 bag-finish-text">
+                    SUBTOTAL
+                </div>
+                <div class="col-xs-9 bag-finish-price text-right">
+                    <div class="bag-finish-price-full" data-price-full></div>
+                    <div class="bag-finish-price-installments" data-price-installments></div>
+                </div>
+                <div class="col-xs-12">
+                    <a href="#" class="btn waves-effect waves-light  btn-large black bag-finish-buy">COMPRAR</a>
+                </div>
+            </li>
+          </ul>
+        </nav>
 
         <div data-catalog data-template="#catalog-item-template"></div>
 
@@ -123,7 +123,7 @@
                 <div class="bag-item-icon-overlay"></div>
                 <span class="bag-item-price">{{currencyFormat}} {{priceFormatted}}</span>
                 <div class="bag-item-image-container col-xs-2 valign-wrapper">
-                    <img class="bag-item-image img-responsive valign" src="{{imageUrl}}">
+                    <img class="bag-item-image img-responsive valign" src="{{imageUrl}}" onerror="$.imgNotLoaded(this)">
                 </div>
                 <div class="col-xs-8 bag-item-description">
                     <span class="bag-item-title">{{title}}</span>

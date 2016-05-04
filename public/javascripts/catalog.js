@@ -65,6 +65,7 @@
                     el = el.querySelector('.lazy');
                     if(el){
                         $("#"+product.sku).find('img').attr('src', el.getAttribute('data-src').replace('254','480'));
+                        $("#"+product.sku).find('[data-img-url]').attr('data-img-url', el.getAttribute('data-src').replace('254','480'));
                     }
                 });
             })(this.products[i]);

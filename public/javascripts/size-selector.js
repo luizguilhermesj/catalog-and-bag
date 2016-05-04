@@ -13,7 +13,7 @@
             throw new Error("you must inform available sizes like this: data-available-sizes=\"s1,s2,s3\"");
         }
 
-        this.availableSizes = this.options.availableSizes.split(',');
+        this.availableSizes = this.options.availableSizes.toString().split(',');
         this.render();
     };
 
@@ -55,7 +55,8 @@
     };
 
     // initialize only on click
-    $(document).on('click', '[data-size-selector]', function(){
+    $(document).on('click', '[data-size-selector]', function(e){
+        e.preventDefault();
         $(this).sizeSelector('render');
     });
 })();
