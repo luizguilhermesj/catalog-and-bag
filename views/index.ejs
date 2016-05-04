@@ -93,7 +93,7 @@
                         <a class="catalog-add-to-bag btn green" href="#"
                             data-size-selector
                             data-available-sizes="{{availableSizes}}"
-                            data-sku="{{title}}"
+                            data-sku="{{sku}}"
                             data-title="{{title}}"
                             data-price="{{price}}"
                             data-color="{{style}}"
@@ -117,8 +117,8 @@
         </script>
 
         <script id="bag-item-template"  type="x-tmpl-mustache"> 
-            <li class="bag-item clearfix">
-                <span class="glyphicon glyphicon-remove bag-item-icon"></span>
+            <li class="bag-item clearfix" id={{id}}>
+                <span class="glyphicon glyphicon-remove bag-item-icon" data-remove="{{id}}"></span>
                 <div class="bag-item-icon-overlay"></div>
                 <span class="bag-item-price">{{currencyFormat}} {{price}}</span>
                 <div class="bag-item-image-container col-xs-2 valign-wrapper">

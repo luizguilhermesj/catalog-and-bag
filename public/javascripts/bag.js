@@ -3,7 +3,7 @@
         this.$element = $(element);
         this.options  = options;
 
-        this.products = [];
+        this.products = {};
         this.templateHtml = null;
 
         this.$itens = this.$element.find('[data-itens]');
@@ -12,6 +12,7 @@
         this.$badges = $('[data-bag-badge]');
 
         this.$element.on('bag.updated', $.proxy(this, 'render'));
+        this.$element.on('click', '[data-remove]', $.proxy(this, 'removeEvent'));
 
         this.init();
     };
@@ -30,23 +31,51 @@
         Mustache.parse(this.templateHtml);   // optional, speeds up future uses
     };
 
-    Bag.prototype.add = function(info) {
-        info.quantity = 1;
-        info.imageUrl = '/images/example-1.jpg';
-        info.currencyFormat = this.options.currencyFormat;
+    Bag.prototype.add = function(product) {
+        var product = jQuery.extend({}, product);
+        var id = product.sku+product.size;
+        if (this.products[id]) {
+            this.products[id].quantity++;
+            this.$element.trigger('bag.updated');
 
-        this.products.push(info);
+            Materialize.toast(this.products[id].quantity +' '+product.title+' - '+product.size+' na Sacola!', 4000, 'yellow darken-4');
+            return;
+        }
+
+        product.id = id;
+        product.quantity = 1;
+        product.imageUrl = '/images/example-1.jpg';
+        product.currencyFormat = this.options.currencyFormat;
+
+        this.products[id] = product;
+
+        Materialize.toast(product.title+' - '+product.size+' adicionado(a) à Sacola!', 4000, 'green');
         this.$element.trigger('bag.updated');
     };
+
+    Bag.prototype.removeEvent = function(e) {
+        this.remove($(e.target).data('remove'));
+    }
+
+    Bag.prototype.remove = function(id) {
+        var message = this.products[id].quantity;
+        message += ' '+this.products[id].title;
+        message += ' - '+this.products[id].size;
+        message += ' removido da Sacola!';
+        Materialize.toast(message, 4000, 'blue darken-2');
+        delete this.products[id];
+        this.$element.trigger('bag.updated');
+    }
 
     Bag.prototype.render = function() {
         var rendered ="";
         var subtotal = 0;
         var quantity = 0;
-        if (this.products.length > 0) {
-            $('body').removeClass('bag-is-empty');
-        }
-        for (var i=0; i<this.products.length; i++) {
+        $('body').toggleClass('bag-is-empty', (Object.keys(this.products).length == 0));
+
+        for (var i in this.products) {
+            console.log(i);
+            console.log(this.products[i]);
             rendered += Mustache.render(this.templateHtml, this.products[i]);
             subtotal += this.products[i].price;
             quantity += this.products[i].quantity;
