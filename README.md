@@ -27,9 +27,9 @@ PORT=8080 bin/www
 
 ### Architecture
 
-This is a components architecture, the idea is to have independent components that can work alogside each other,
+This is a components architecture, the idea is to have independent components that can work alongside each other,
 without tied behaviors.
-They work throught events, data-attributes and programatically as a jquery plugin
+They work through events, data-attributes and programatically as a jquery plugin
 
 Their scope are sealed and this three ways are the only ways to comunicate with them.
 
