@@ -45,7 +45,7 @@
 
         if (this.products[id]) {
             this.products[id].quantity++;
-            this.products[id].price = this.products[id].price + this.products[id].price;
+            this.products[id].sumPrice = this.products[id].sumPrice + this.products[id].price;
             this.$element.trigger('bag.updated');
 
             var message = this.products[id].quantity;
@@ -61,6 +61,7 @@
             sku: newProduct.sku,
             size: newProduct.size,
             price: newProduct.price,
+            sumPrice: newProduct.price,
             color: newProduct.color,
             title: newProduct.title,
             imageUrl: newProduct.imgUrl,
@@ -107,10 +108,10 @@
         $('body').toggleClass('bag-is-empty', (Object.keys(this.products).length == 0));
 
         for (var i in this.products) {
-            this.products[i].priceFormatted = $.formatPrice(this.products[i].price);
+            this.products[i].priceFormatted = $.formatPrice(this.products[i].sumPrice);
 
             rendered += Mustache.render(this.templateHtml, this.products[i]);
-            subtotal += this.products[i].price;
+            subtotal += this.products[i].sumPrice;
             quantity += this.products[i].quantity;
         }
 
