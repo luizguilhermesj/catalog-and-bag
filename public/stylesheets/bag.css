@@ -104,6 +104,10 @@
     color: #dfbd00;
 }
 
+.bag-finish {
+    margin-bottom: 200px;
+}
+
 .bag-finish>div {
     padding: 0;
 }

@@ -37,7 +37,7 @@
         this.$element.data('size',$(e.target).data('sizeSelect'));
         this.$element.parent().removeClass('is-active');
         this.$element.trigger('size-selector.change');
-    }
+    };
 
     /*
      * Jquery plugin declaration

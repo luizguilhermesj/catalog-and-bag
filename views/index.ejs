@@ -89,7 +89,7 @@
             <article class="col-xs-4 col-sm-4 col-lg-3 text-center catalog-item" id="{{sku}}">
                 <div>
                     <div class="catalog-item-image-container size-selector">
-                        <img class="catalog-item-image img-responsive" src="/images/example-1.jpg">
+                        <img class="catalog-item-image img-responsive" src="/images/{{sku}}.jpg" onerror="$.imgNotLoaded(this)">
                         <a class="catalog-add-to-bag btn green" href="#"
                             data-size-selector
                             data-available-sizes="{{availableSizes}}"
@@ -97,6 +97,7 @@
                             data-title="{{title}}"
                             data-price="{{price}}"
                             data-color="{{style}}"
+                            data-img-url="/images/{{sku}}.jpg"
                             data-size>
                             Comprar
                         </a>
@@ -120,7 +121,7 @@
             <li class="bag-item clearfix" id={{id}}>
                 <span class="glyphicon glyphicon-remove bag-item-icon" data-remove="{{id}}"></span>
                 <div class="bag-item-icon-overlay"></div>
-                <span class="bag-item-price">{{currencyFormat}} {{price}}</span>
+                <span class="bag-item-price">{{currencyFormat}} {{priceFormatted}}</span>
                 <div class="bag-item-image-container col-xs-2 valign-wrapper">
                     <img class="bag-item-image img-responsive valign" src="{{imageUrl}}">
                 </div>

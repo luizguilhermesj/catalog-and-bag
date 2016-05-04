@@ -7,5 +7,6 @@ $(document).ready(function(){
 
   $(document).on('size-selector.change', function(e){
         $(e.target).trigger('bag.add');
-  })
+  });
+
 });

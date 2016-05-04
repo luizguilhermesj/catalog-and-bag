@@ -40,7 +40,7 @@
             data.products[i].priceInteger = price[0];
             data.products[i].priceDecimal = $.pad(price[1],2);
             if (data.products[i].installments) {
-                data.products[i].installmentsPrice = (data.products[i].price / data.products[i].installments).toFixed(2).replace('.',',');
+                data.products[i].installmentsPrice = $.formatPrice(data.products[i].price / data.products[i].installments);
             }
         }
         this.products = data.products;
@@ -69,7 +69,7 @@
                 });
             })(this.products[i]);
         }
-    }
+    };
 
     /*
      * Jquery plugin declaration
