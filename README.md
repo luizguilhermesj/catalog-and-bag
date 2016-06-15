@@ -1,6 +1,4 @@
-# Netshoes Cart Test
-Demo available at: http://162.243.215.133:8888
-
+# Catalog and Bag Front End Example
 ### Dependencies
 
 To install the dependencies, at the root of the project, run:
